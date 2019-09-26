@@ -20,13 +20,26 @@ void show_int(int x) {
     show_bytes((byte_pointer) &x, sizeof(int)); 
 }
 
+void show_float(short x) {
+    show_bytes((byte_pointer) &x, sizeof(short));
+}
+
+void show_float(long x) {
+    show_bytes((byte_pointer) &x, sizeof(long));
+}
+
 void show_float(float x) {
     show_bytes((byte_pointer) &x, sizeof(float));
+}
+
+void show_float(double x) {
+    show_bytes((byte_pointer) &x, sizeof(double));
 }
 
 void show_pointer(void *x) {
     show_bytes((byte_pointer) &x, sizeof(void *));
 }
+
 /* $end show-bytes */
 
 
@@ -126,6 +139,9 @@ int main(int argc, char *argv[])
 	string_ueg();
 	printf("Calling string_leg\n");
 	string_leg();
+	show_short(358);
+	show_long(274 877 906 944);
+	show_double(3.1415926535);
     }
     return 0;
 }
